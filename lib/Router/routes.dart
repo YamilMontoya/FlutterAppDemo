@@ -4,7 +4,8 @@
 //print(GoRouter.of(context).routeInformationProvider.value.uri);
 // SIN IMPLEMENTAR
 
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 
 class Rout {
   final String name;

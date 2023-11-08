@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shellarch2/Models/fewUserModel.dart';
+import '../../Services/dataFromAssets.dart';
+import '../utils.dart';
 
-import '../UI/utils.dart';
 
 /// The third screen in the bottom navigation bar.
 class ScreenE extends StatelessWidget {

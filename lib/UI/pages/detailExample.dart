@@ -24,7 +24,7 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Text(
               'Details for $label',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
             Divider(
               color: Theme.of(context).dividerColor,
@@ -40,7 +40,15 @@ class DetailsScreen extends StatelessWidget {
   static Widget _JustforExample(BuildContext context) {
     final String location = GoRouterState.of(context).uri.toString();
     if (location.startsWith('/a')) {
-      return Text('This Screen does not Overlap the shell.');
+      return Column(
+        children: [
+          Text("News  on this App ",style: Theme.of(context).textTheme.headlineSmall),
+          Divider(
+            color: Theme.of(context).dividerColor,
+          ),
+          Text("Bloc> State Management example on Drawer [Bloc]* "),
+        ],
+      );
     }
     if (location.startsWith('/b')) {
       return Text('this screen Overlap the shell because change in the navigator key value', style: Theme.of(context).textTheme.bodyMedium);

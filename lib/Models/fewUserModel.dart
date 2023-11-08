@@ -3,8 +3,6 @@
 
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
-
 List<FUser> FUserFromJson(String str) => List<FUser>.from(json.decode(str).map((x) => FUser.fromJson(x)));
 
 String FUserToJson(List<FUser> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -47,17 +45,4 @@ class FUser {
     "company": company,
     "email": email,
   };
-}
-
-Future<List<FUser>> getUsers() async {
-  /*
-  final response = await http.get('https://jsonplaceholder.typicode.com/users');
-  if (response.statusCode == 200) {
-    return FUsers.fromJson(json.decode(response.body));
-  } else {
-    throw Exception('Failed to load users');
-  }
-  */
-  final String response = await rootBundle.loadString('assets/json/fewUsers.json');
-  return  FUserFromJson(response);
 }

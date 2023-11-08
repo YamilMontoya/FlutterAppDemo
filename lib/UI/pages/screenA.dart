@@ -10,7 +10,7 @@ class ScreenA extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First App Page'),
+        title: const Text('Home Page'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -31,7 +31,7 @@ class ScreenA extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.italic),
               ),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {
                   GoRouter.of(context).go('/a/details');
                 },
@@ -39,10 +39,10 @@ class ScreenA extends StatelessWidget {
                   alignment: Alignment.center,
                 ),
                 child: const  Text(
-                    'Tap here to navigate to Details',
+                    'Check the New Features',
                     style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 30,
+                      color: Colors.black,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       //decoration: TextDecoration.overline,
                       //decorationColor: Colors.lightGreen.shade200,

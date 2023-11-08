@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
-import '../Models/userModel.dart';
+import '../blocs/photos/photos_bloc/photos_bloc_bloc.dart';
+import '../blocs/photos/photos_bloc/photos_bloc_event.dart';
 
 
 class ShellDrawer extends StatelessWidget {
@@ -67,10 +68,10 @@ class ShellDrawer extends StatelessWidget {
               ),
               ListTile(
                 leading: const Icon(Icons.people),
-                title: const Text("Users"),
+                title: const Text("[Bloc] Photos List"),
                 onTap: () {
                   Navigator.of(context).pop();
-                  UserModel.Load(); // Revisar
+                  context.read<PhotosBloc>().add(PhotosLoadEvent());
                   GoRouter.of(context).go('/d');
                 },
               ),

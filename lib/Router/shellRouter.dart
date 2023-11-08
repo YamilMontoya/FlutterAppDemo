@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shellarch2/pages/ScreenE.dart';
 
-import '../pages/DetailExample.dart';
-import '../pages/ScreenA.dart';
-import '../pages/ScreenB.dart';
-import '../pages/ScreenC.dart';
-import '../pages/ScreenD.dart';
-import '../pages/Shell.dart';
-import '../Router/Routes.dart';
+
+import '../UI/pages/detailExample.dart';
+import '../UI/pages/screenA.dart';
+import '../UI/pages/screenB.dart';
+import '../UI/pages/screenC.dart';
+import '../UI/pages/screenD.dart';
+import '../UI/pages/screenE.dart';
+import '../UI/pages/shell.dart';
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 
