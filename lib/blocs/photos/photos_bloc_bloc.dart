@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:shellarch2/Models/photoModel.dart';
 
-import '../../../Services/data_service2.dart';
+import '../../Services/data_service2.dart';
 import 'photos_bloc_event.dart';
 import 'photos_bloc_state.dart';
 

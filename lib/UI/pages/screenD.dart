@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../blocs/photos/photos_bloc/photos_bloc_view.dart';
+import '../../blocs/photos/photos_bloc_view.dart';
 
 /// The third screen in the bottom navigation bar.
 class ScreenD extends StatelessWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shellarch2/blocs/photos/photos_bloc/photos_bloc_bloc.dart';
+import 'package:shellarch2/blocs/auth/auth_bloc.dart';
+import 'package:shellarch2/blocs/photos/photos_bloc_bloc.dart';
 
 import '../Router/shellRouter.dart';
 
@@ -30,8 +31,19 @@ class BlocWatchedApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    /*return BlocProvider(
       create: (BuildContext context) => PhotosBloc(),
+      child: ShellRouter(),
+    );*/
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PhotosBloc>(
+          create: (BuildContext context) => PhotosBloc(),
+        ),
+        BlocProvider<AuthBloc>(
+          create: (BuildContext context) => AuthBloc(),
+        ),
+      ],
       child: ShellRouter(),
     );
   }

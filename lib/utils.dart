@@ -1,6 +1,5 @@
 
-
-import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 int ColorShader (int index, bool isAccent ){
   /*Most swatches have colors from 100 to 900 in increments of one hundred, plus the color 50. The smaller the number, the more pale the color. The greater the number, the darker the color.
@@ -43,4 +42,20 @@ In addition, a series of blacks and whites with common opacities are available. 
     }
   }
   return 0;
+}
+
+class MySharedPreferences  {
+ // Write DATA
+  static Future<bool> saveString(key, value) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return await sharedPreferences.setString(key, value);
+  }
+
+// Read Data
+  static Future<String> getString(key) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String? value = sharedPreferences.getString(key);
+    if (value == null) return "null";
+    return value;
+  }
 }

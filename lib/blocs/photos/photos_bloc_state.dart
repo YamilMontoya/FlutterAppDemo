@@ -2,7 +2,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../../Models/photoModel.dart';
+import '../../Models/photoModel.dart';
 
 @immutable
 abstract class PhotosBlocState extends Equatable {

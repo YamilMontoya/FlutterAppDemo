@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../blocs/photos/photos_bloc/photos_bloc_bloc.dart';
-import '../blocs/photos/photos_bloc/photos_bloc_event.dart';
+import '../blocs/photos/photos_bloc_bloc.dart';
+import '../blocs/photos/photos_bloc_event.dart';
 
 
 class ShellDrawer extends StatelessWidget {
@@ -49,7 +49,7 @@ class ShellDrawer extends StatelessWidget {
                 title: const Text("Inicio"),
                 onTap: () {
                   Navigator.of(context).pop();
-                  GoRouter.of(context).go('/a');
+                  GoRouter.of(context).go('/');
                 },
               ),
                Divider(
@@ -76,8 +76,8 @@ class ShellDrawer extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.credit_card_rounded),
-                title: Text("User Asynchronously"),
+                leading: const  Icon(Icons.people_alt_outlined),
+                title: const  Text("User Asynchronously"),
                 onTap: () {
                   Navigator.of(context).pop();
                   GoRouter.of(context).go('/e');
@@ -89,13 +89,17 @@ class ShellDrawer extends StatelessWidget {
                 indent: 70,
                 endIndent: 10,
               ),
-              const ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Configuracion"),
+              ListTile(
+                leading: const Icon(Icons.login),
+                title: const Text("login"),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  GoRouter.of(context).go('/f');
+                },
               ),
               const ListTile(
                 leading: Icon(Icons.help),
-                title: Text("Ayuda"),
+                title:Text("Ayuda"),
               )
 
               //const Text("item 1"),

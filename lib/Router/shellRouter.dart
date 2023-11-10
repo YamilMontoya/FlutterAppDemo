@@ -5,12 +5,14 @@ import 'package:go_router/go_router.dart';
 
 
 import '../UI/pages/detailExample.dart';
+import '../UI/pages/login_page.dart';
 import '../UI/pages/screenA.dart';
 import '../UI/pages/screenB.dart';
 import '../UI/pages/screenC.dart';
 import '../UI/pages/screenD.dart';
 import '../UI/pages/screenE.dart';
 import '../UI/pages/shell.dart';
+import '../blocs/auth/auth_view.dart';
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 
@@ -21,7 +23,7 @@ class ShellRouter extends StatelessWidget {
 
   final GoRouter _router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: '/a',
+    initialLocation: '/',
     debugLogDiagnostics: true,
     routes: <RouteBase>[
 
@@ -35,7 +37,7 @@ class ShellRouter extends StatelessWidget {
 
           /// The first screen to display in the bottom navigation bar.
           GoRoute(
-            path: '/a',
+            path: '/',
             builder: (BuildContext context, GoRouterState state) {
               return const ScreenA();
             },
@@ -110,6 +112,22 @@ class ShellRouter extends StatelessWidget {
             path: '/e',
             builder: (BuildContext context, GoRouterState state) {
               return const ScreenE();
+            },
+            routes: <RouteBase>[
+              // The details screen to display stacked on the inner Navigator.
+              // This will cover screen A but not the application shell.
+              GoRoute(
+                path: 'details',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const DetailsScreen(label: 'C');
+                },
+              ),
+            ],
+          ),
+          GoRoute(
+            path: '/f',
+            builder: (BuildContext context, GoRouterState state) {
+              return AuthPage();
             },
             routes: <RouteBase>[
               // The details screen to display stacked on the inner Navigator.
